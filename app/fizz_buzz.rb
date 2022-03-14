@@ -1,13 +1,17 @@
 #!/usr/bin/env ruby
 
-for i in 1..100 do
-  if i % 15 == 0 then
-    print("FizzBuzz\n")
-  elsif i % 3 == 0 then
-    print("Fizz\n")
-  elsif i % 5 == 0 then
-    print("Buzz\n")
+def fizz_buzz(num)
+  if num % 15 == 0 then
+    "FizzBuzz"
+  elsif num % 3 == 0 then
+    "Fizz"
+  elsif num % 5 == 0 then
+    "Buzz"
   else
-    print(i, "\n")
+    num.to_s
   end
+end
+
+for i in 1..100 do
+  print(fizz_buzz(i), "\n")
 end
