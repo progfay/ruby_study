@@ -13,5 +13,5 @@ def fizz_buzz(num)
 end
 
 for i in 1..100 do
-  print(fizz_buzz(i), "\n")
+  puts fizz_buzz(i)
 end
