@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require './rgb.rb'
 
 class RgbTest < Minitest::Test
   def test_to_hex
