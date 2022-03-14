@@ -12,6 +12,8 @@ def fizz_buzz(num)
   end
 end
 
-for i in 1..100 do
-  puts fizz_buzz(i)
+if __FILE__ == $0
+  for i in 1..100 do
+    puts fizz_buzz(i)
+  end
 end
