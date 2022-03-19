@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require './gate.rb'
 
 class GateTest < Minitest::Test
-	def test_umeda_to_juso_when_fare_is_enough
+	def test_umeda_to_juso
 		umeda = Gate.new(:umeda)
 		juso = Gate.new(:juso)
 
@@ -11,7 +11,7 @@ class GateTest < Minitest::Test
 		assert juso.exit(ticket)
 	end
 
-	def test_umeda_to_mikuni_when_fare_is_not_enough
+	def test_umeda_to_mikuni
 		umeda = Gate.new(:umeda)
 		mikuni = Gate.new(:mikuni)
 
