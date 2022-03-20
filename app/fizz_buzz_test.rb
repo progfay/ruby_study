@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require './fizz_buzz.rb'
 
-class FizzBuzzText < Minitest::Test
+class FizzBuzzTest < Minitest::Test
   def test_fizz_buzz
     assert_equal "FizzBuzz", fizz_buzz(15)
     assert_equal "FizzBuzz", fizz_buzz(30)
