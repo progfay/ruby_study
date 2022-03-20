@@ -4,6 +4,8 @@ require './bank.rb'
 
 class DeepFreezableTest < Minitest::Test
 	def test_deep_freezable
-    assert DeepFreezable
+		assert_equal ['Japan', 'US', 'India'], Team::COUNTRIES
+		assert Team::COUNTRIES.frozen?
+		assert Team::COUNTRIES.all? { |country| country.frozen? }
 	end
 end
