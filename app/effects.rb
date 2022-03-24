@@ -1,19 +1,24 @@
 module Effects
   def self.reverse
     ->(words) do
-      words.split(' ').map(&:reverse).join(' ')
+      self.each_word(words, &:reverse)
     end
   end
 
   def self.echo(rate)
     ->(words) do
-      words.chars.map { |c| c == ' ' ? c : c * rate }.join
+      self.each_word(words) { |word| word.chars.map{ |c| c * rate }.join }
     end
   end
 
   def self.loud(level)
     ->(words) do
-      words.split(' ').map{ |word| word.upcase + '!' * level }.join(' ')
+      self.each_word(words) { |word| word.upcase + '!' * level }
     end
   end
+
+  private
+    def self.each_word(words, &block)
+      words.split(' ').map{ |word| block.call(word) }.join(' ')
+    end
 end
